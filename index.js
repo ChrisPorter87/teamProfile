@@ -1,6 +1,9 @@
 const inquirer = require("inquirer");
 const fs = require("fs");
 const employees = [];
+const { writeFile } = require("./generateHTML");
+
+const generateHTML = require("./htmlTemplate");
 const promptUser = () => {
   return inquirer.prompt([
     {
@@ -30,39 +33,12 @@ const promptUser = () => {
   ]);
 };
 
-const createPage = (email, position, teammemberName) => {
-  const html = `
-  <!DOCTYPE html> 
-  <html lang="en"> 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Portfolio Demo</title>
-  </head>
-
-  <body>
-    <h2>${teammemberName}</h2>
-    <h2>${email}</h2>
-    <h3>${position}</h3>
-  </body>
-  </html>
-  `;
-  fs.writeFile(
-    "./dist/index.html",
-    createPage(teammemberName, email, position),
-    function (err) {
-      if (err) {
-        console.log(err);
-      }
-      console.log(html);
-    }
-  );
-};
-
 promptUser()
-  .then(() => {
-    return createPage;
+  .then((templateData) => {
+    return generateHTML(templateData);
+  })
+  .then((pageHTML) => {
+    return writeFile(pageHTML);
   })
   .catch((err) => {
     console.log(err);
