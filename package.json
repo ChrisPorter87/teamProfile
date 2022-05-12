@@ -1,6 +1,29 @@
 {
   "dependencies": {
-    "inquirer": "^8.2.4",
+    "inquirer": "^8.2.4"
+  },
+  "devDependencies": {
     "jest": "^28.1.0"
-  }
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "name": "teamprofile",
+  "description": "",
+  "version": "1.0.0",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChrisPorter87/teamProfile.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChrisPorter87/teamProfile/issues"
+  },
+  "homepage": "https://github.com/ChrisPorter87/teamProfile#readme"
 }
