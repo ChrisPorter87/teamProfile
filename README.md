@@ -36,7 +36,7 @@ MIT
 
 ## Video Link
 
-https://drive.google.com/file/d/1WNXYO1eTzAIKR44E5DDTDf4ZEi4hXwl8/view
+
 
 ## Questions
 
